@@ -12,7 +12,12 @@
     <tr>
       {{ $items := split . "|" }}
       {{ range $items }}
-        <td>{{ . }}</td>
+        <td>
+        {{ $tokens := split . ":" }}
+          <span class="{{index $tokens 1}}">
+            {{index $tokens 0}}
+          </span>
+        </td>
       {{ end }}
     </tr>
   {{ end }}

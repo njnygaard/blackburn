@@ -1,0 +1,9 @@
+{{ $color := (index .Params 0) }}
+{{ $text := after 1 .Params }}
+
+
+<span class="{{$color}}">
+{{ range $text }}
+	{{.}}
+{{end}}
+</span>
